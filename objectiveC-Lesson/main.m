@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Student.h"
 
 //метод сложения
 void build () {
@@ -185,32 +186,20 @@ typedef struct Human Human;
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        //1 задание
-        autoMarka();
-        //2 задание
-        int a = calculator(2, operationmultiplication, 2);
-        int b = calculator(10, operationdivision, 2);
-        NSLog(@"Result: \n a = %i, \n b = %i", a, b);
-        //3 задание
-        Human human1;
-        Human human2;
-        Human human3;
-        human1.name = @"Vasy";
-        human1.age = 31;
-        human2.name = @"Pety";
-        human2.age = 22;
-        human3.name = @"adel";
-        human3.age = 34;
+        Student* student = [[Student alloc] initName:@"Adel" initSurnName:@"Muhametshin"];
+        [student upYear];
         
-        NSLog(@"\n human1 name: %@, and age: %d, \n human2 name: %@ and age: %d, \n human3 name: %@ and age: %d" , human1.name, human1.age, human2.name, human2.age, human3.name, human3.age);
+        Student* student2 = [[Student alloc] initName:@"Artur" initSurnName:@"Ibragimovich"];
+        [student2 upYear];
+        [student2 upYear];
         
+        Student* student3 = [[Student alloc] initName:@"Vitaly" initSurnName:@"Konshin"];
 
-//        build();
-//        subtraction ();
-//        multiplication ();
-//        division ();
-//        alphabet ();
-
+        NSArray* array = [[NSArray alloc] initWithObjects:student,student2,student3, nil];
+        
+        for (Student* student in array) {
+            NSLog(@"%@ его возраст %i",student.fullName, student.age);
+        }
         
     }
     return 0;
