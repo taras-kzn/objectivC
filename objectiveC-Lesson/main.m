@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Student.h"
+#import "FlockOfBirds.h"
+#import "Birds.h"
 
 //метод сложения
 void build () {
@@ -186,20 +188,38 @@ typedef struct Human Human;
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        Student* student = [[Student alloc] initName:@"Adel" initSurnName:@"Muhametshin"];
-        [student upYear];
+        //урок 5 задание 2
+        FlockOfBirds* flockOfBirds = [[FlockOfBirds alloc] init];
         
-        Student* student2 = [[Student alloc] initName:@"Artur" initSurnName:@"Ibragimovich"];
-        [student2 upYear];
-        [student2 upYear];
+        Birds* bird1 = [[Birds alloc] initWithBirds:@1];
+        Birds* bird2 = [[Birds alloc] initWithBirds:@2];
+        Birds* bird3 = [[Birds alloc] initWithBirds:@3];
+        Birds* bird4 = [[Birds alloc] initWithBirds:@4];
         
-        Student* student3 = [[Student alloc] initName:@"Vitaly" initSurnName:@"Konshin"];
-
-        NSArray* array = [[NSArray alloc] initWithObjects:student,student2,student3, nil];
+        NSArray* arrayBirds = [[NSArray alloc] initWithObjects:bird1,bird2,bird3,bird4, nil];
         
-        for (Student* student in array) {
-            NSLog(@"%@ его возраст %i",student.fullName, student.age);
-        }
+        [flockOfBirds addFlockOfBirds:arrayBirds];
+        
+        [bird1 release];
+        [bird2 release];
+        [bird3 release];
+        [bird4 release];
+        [flockOfBirds release];
+        
+//        Student* student = [[Student alloc] initName:@"Adel" initSurnName:@"Muhametshin"];
+//        [student upYear];
+//        
+//        Student* student2 = [[Student alloc] initName:@"Artur" initSurnName:@"Ibragimovich"];
+//        [student2 upYear];
+//        [student2 upYear];
+//        
+//        Student* student3 = [[Student alloc] initName:@"Vitaly" initSurnName:@"Konshin"];
+//
+//        NSArray* array = [[NSArray alloc] initWithObjects:student,student2,student3, nil];
+//        
+//        for (Student* student in array) {
+//            NSLog(@"%@ его возраст %i",student.fullName, student.age);
+//        }
         
     }
     return 0;
