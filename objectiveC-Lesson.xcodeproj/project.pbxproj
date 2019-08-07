@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8464968022D3542D00D6CDFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8464967F22D3542D00D6CDFD /* main.m */; };
+		848F83D822F32D130060C46F /* Birds.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F83D722F32D130060C46F /* Birds.m */; };
+		848F83DB22F3311B0060C46F /* FlockOfBirds.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F83DA22F3311B0060C46F /* FlockOfBirds.m */; };
 		84D45F5E22F18645008AFD66 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D45F5D22F18645008AFD66 /* Student.m */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,10 @@
 /* Begin PBXFileReference section */
 		8464967C22D3542D00D6CDFD /* objectiveC-Lesson */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "objectiveC-Lesson"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8464967F22D3542D00D6CDFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		848F83D622F32D130060C46F /* Birds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Birds.h; sourceTree = "<group>"; };
+		848F83D722F32D130060C46F /* Birds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Birds.m; sourceTree = "<group>"; };
+		848F83D922F3311B0060C46F /* FlockOfBirds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlockOfBirds.h; sourceTree = "<group>"; };
+		848F83DA22F3311B0060C46F /* FlockOfBirds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlockOfBirds.m; sourceTree = "<group>"; };
 		84D45F5C22F18645008AFD66 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		84D45F5D22F18645008AFD66 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +69,10 @@
 				8464967F22D3542D00D6CDFD /* main.m */,
 				84D45F5C22F18645008AFD66 /* Student.h */,
 				84D45F5D22F18645008AFD66 /* Student.m */,
+				848F83D622F32D130060C46F /* Birds.h */,
+				848F83D722F32D130060C46F /* Birds.m */,
+				848F83D922F3311B0060C46F /* FlockOfBirds.h */,
+				848F83DA22F3311B0060C46F /* FlockOfBirds.m */,
 			);
 			path = "objectiveC-Lesson";
 			sourceTree = "<group>";
@@ -123,6 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848F83D822F32D130060C46F /* Birds.m in Sources */,
+				848F83DB22F3311B0060C46F /* FlockOfBirds.m in Sources */,
 				8464968022D3542D00D6CDFD /* main.m in Sources */,
 				84D45F5E22F18645008AFD66 /* Student.m in Sources */,
 			);
@@ -245,6 +257,7 @@
 		8464968422D3542D00D6CDFD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PQ8675BM6;
@@ -256,6 +269,7 @@
 		8464968522D3542D00D6CDFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PQ8675BM6;
