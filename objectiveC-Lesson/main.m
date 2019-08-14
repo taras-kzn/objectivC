@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Student.h"
-#import "FlockOfBirds.h"
-#import "Birds.h"
+#import "Calculator.h"
 
 //метод сложения
 void build () {
@@ -148,7 +147,7 @@ typedef enum OperationCal OperationCal;
 
 float calculator(int a, OperationCal oper, int b ) {
     float result = 0.0f;
-    
+
     switch (oper) {
         case operationbuild:
             return a + b;
@@ -183,43 +182,59 @@ struct Human {
 typedef struct Human Human;
 
 
+//практическое задание за 6 урок
+typedef NSString* (^Block1) (NSInteger);
 
+typedef int (^Calculet) (int, int);
+
+//площадь треугольника
+typedef int (^Triangle) (int, int, int);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        //урок 5 задание 2
-        FlockOfBirds* flockOfBirds = [[FlockOfBirds alloc] init];
+        int first = 2;
         
-        Birds* bird1 = [[Birds alloc] initWithBirds:@1];
-        Birds* bird2 = [[Birds alloc] initWithBirds:@2];
-        Birds* bird3 = [[Birds alloc] initWithBirds:@3];
-        Birds* bird4 = [[Birds alloc] initWithBirds:@4];
+        int second = 4;
+
+        Block1 block = ^(NSInteger intValue)  {
+            return [NSString stringWithFormat:@"%ld", (long)intValue];
+        };
         
-        NSArray* arrayBirds = [[NSArray alloc] initWithObjects:bird1,bird2,bird3,bird4, nil];
+        NSString* result = block(2);
+    
+        NSLog(@"reuslt: %@", result);
         
-        [flockOfBirds addFlockOfBirds:arrayBirds];
+        Calculet calculet = ^(int a, int b){
+            return a + b;
+        };
         
-        [bird1 release];
-        [bird2 release];
-        [bird3 release];
-        [bird4 release];
-        [flockOfBirds release];
+        int res = calculet(2,5);
         
-//        Student* student = [[Student alloc] initName:@"Adel" initSurnName:@"Muhametshin"];
-//        [student upYear];
-//        
-//        Student* student2 = [[Student alloc] initName:@"Artur" initSurnName:@"Ibragimovich"];
-//        [student2 upYear];
-//        [student2 upYear];
-//        
-//        Student* student3 = [[Student alloc] initName:@"Vitaly" initSurnName:@"Konshin"];
-//
-//        NSArray* array = [[NSArray alloc] initWithObjects:student,student2,student3, nil];
-//        
-//        for (Student* student in array) {
-//            NSLog(@"%@ его возраст %i",student.fullName, student.age);
-//        }
+        NSLog(@"%d", res);
+        
+        Triangle formulaTriangle = ^(int a, int b, int c){
+            return a + b + c / 2;
+        };
+        
+        int triangle = formulaTriangle(4,8,2);
+        
+        NSLog(@"Площадь треуголника равна: %d", triangle);
+        
+        int reultMultiplacatoin = [Calculator beginWithAction:Actionmultiplication firstNumber:first secondNumber:second];
+
+        
+        int resultBuild = [Calculator beginWithAction:Actionbuild firstNumber:first secondNumber:second];
+
+        
+        int resultDivision = [Calculator beginWithAction:Actiondivision firstNumber:first secondNumber:second];
+
+        int resultSubtraction = [Calculator beginWithAction:Actionsubtraction firstNumber:first secondNumber:second];
+ 
+        NSLog(@"Multiplacation: %d", reultMultiplacatoin);
+        NSLog(@"Build: %d", resultBuild);
+        NSLog(@"Division: %d", resultDivision);
+        NSLog(@"Subtraction: %d", resultSubtraction);
         
     }
     return 0;
